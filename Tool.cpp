@@ -1,12 +1,12 @@
 /************************************************************
 ** File Name: Tool.cpp
-** Author 1: 
-** Author 2: 
-** Author 3: 
-** Author 4: 
-** Author 5: 
-** Author 6: 
-** Author 7: 
+** Author 1: Nathaniel Bennet
+** Author 2: Aaron Berns
+** Author 3: Juan Du
+** Author 4: Christopher Dubbs
+** Author 5: Chieko Duncans
+** Author 6: Molly Johnson
+** Author 7: Armand Reitz
 ** Date: 02/06/2016
 ** CS 162 Group Project | Play Rock Paper, Scissors!!!
 ** File discription: Tool class function implementation file
@@ -19,52 +19,62 @@
 #include<vector>
 #include<algorithm>
 #include <string>
-
 #include "Tool.hpp"
-#include "Rock.hpp"
-#include "Paper.hpp"
-#include "Scissors.hpp"
+#include "RPS.hpp"
 
 /**********************************************************
 ** Tool class
-** 
+** Constructor: initializes the strength and type variables
 ***********************************************************/
+Tool::Tool(int toolStrength, char toolType)
+{
+    setStrength(toolStrength);
+    setType(toolType);
+}
 
+/**********************************************************
+ ** Tool class
+ ** Destructor
+ ***********************************************************/
+Tool::~Tool()
+{
+}
 
 /**********************************************************
 ** Tool class
-** 
+** setStrength: sets the strenght variable
 ***********************************************************/
-
+void Tool::setStrength(int str)
+{
+    strength = str;
+}
 
 /**********************************************************
 ** Tool class
-**
+**  setType: sets the type variable
 ***********************************************************/
-
-
-/**********************************************************
-** Tool class
-** 
-***********************************************************/
-
+void Tool::setType(char tp)
+{
+    type = tp;
+}
 
 /**********************************************************
-** Tool class
-** 
-***********************************************************/
-
-
-/**********************************************************
-** Tool class
-** 
-**********************************************************/
-
-
+ ** Tool class
+ ** getStrength: returns the strength variable
+ ***********************************************************/
+int Tool::getStrength()
+{
+    return strength;
+}
 
 /**********************************************************
-** Tool class
-** 
-**********************************************************/
+ ** Tool class
+ ** getType: returns the type variable
+ ***********************************************************/
+char Tool::getType()
+{
+    return type;
+}
+
 
 
