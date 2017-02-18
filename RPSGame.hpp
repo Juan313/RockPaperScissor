@@ -22,5 +22,8 @@ private:
   int human_wins;
   int computer_wins;
   int ties;
+  char human_last_tool;     // AI uses these variables in choosing next Tool
+  char comp_last_tool;
+  int last_winner;
   
 };
