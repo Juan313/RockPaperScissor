@@ -26,4 +26,7 @@ private:
   char comp_last_tool;
   int last_winner;
   
+public:
+  char computerChoice();    // AI chooses and returns next tool type
+  
 };
