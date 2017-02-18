@@ -32,7 +32,7 @@
 ** the computer will anticipate that the user is most likely to use the tool that would have beaten the computer in the
 ** previous round, and pick the appropriate tool to defeat it.
 *********************************************************************************************************************/
-void RPSGame::computerChoice()
+char RPSGame::computerChoice()
 {
 	//need member variables to store last winner(1,2 or 3) and user's last choice(r,p or s), initialize to a value
 	//1 = human won last, 2 = computer won last, 3 = last round was draw
@@ -40,17 +40,17 @@ void RPSGame::computerChoice()
 	//tool, so that the human tool used in this function is from the previous round and not the current round
 	//alternatively, there could be a "lastHumanTool" data member and a "currentHumanTool" data member 
 	//to keep the two separate.
-	if (lastWinner == 1) //human won last, computer lost last
+	if (last_winner == 1) //human won last, computer lost last
 	{
 		//if last tool used by human == rock
-		if (humanTool == 'r')
+		if (human_last_tool == 'r')
 		{
 			//program anticipates human using same tool as won last round
 			computerTool = 'p';
 		}
 
 		//if last tool used by human == paper
-		else if (humanTool == 'p')
+		else if (human_last_tool == 'p')
 		{
 			//program anticipates human using same tool as won last round
 			computerTool = 's';
@@ -64,10 +64,10 @@ void RPSGame::computerChoice()
 		}
 	}
 
-	else if (lastWinner == 2) //computer won last, human lost last
+	else if (last_winner == 2) //computer won last, human lost last
 	{
 		//if last tool used by human == rock
-		if (humanTool == 'r')
+		if (human_last_tool == 'r')
 		{
 			//program anticipates human thinking computer will play winning tool (p)
 			//again and playing s
@@ -75,7 +75,7 @@ void RPSGame::computerChoice()
 		}
 
 		//if last tool used by human == paper
-		else if (humanTool == 'p')
+		else if (human_last_tool == 'p')
 		{
 			//program anticipates human thinking computer will play winning tool (s)
 			//again and playing r
@@ -111,4 +111,6 @@ void RPSGame::computerChoice()
 			computerTool = 's';
 		}
 	}
+	
+	return computerTool;
 }
