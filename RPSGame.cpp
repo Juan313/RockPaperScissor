@@ -1,4 +1,18 @@
-// header
+/************************************************************
+** File Name: RPSGame.hpp
+** Author 1: Nathaniel Bennet
+** Author 2: Aaron Berns
+** Author 3: Juan Du
+** Author 4: Christopher Dubbs
+** Author 5: Chieko Duncans
+** Author 6: Molly Johnson
+** Author 7: Armand Reitz
+** Date: 02/06/2016
+** CS 162 Group Project | Play Rock Paper, Scissors!!!
+** File discription: RPSGame class implementation file
+**************************************************************/
+#include "RPSGame.hpp"
+
 //in another function (like main), use srand/generator seed/time 
 //function outside of loop to seed once:
 //#include <ctime>
