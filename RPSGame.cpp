@@ -115,3 +115,38 @@ char RPSGame::computerChoice()
 	
 	return computerTool;
 }
+
+// Constructor
+RPSGame::RPSGame (int hr, int hp, int hs, int cr, int cp, int cs) {
+    human_rock = new Rock(hr);
+    human_paper = new Paper(hp);
+    human_scissors = new Scissors(hs);
+    computer_rock = new Rock(cr);
+    computer_paper = new Paper(cp);
+    computer_scissors = new Scissors(cs);
+}
+
+int RPSGame::play (char humanChoice, char computerChoice) {
+    int result;
+    Tool* human;
+    Tool* computer;
+
+    if (humanChoice == 'r') {
+        human = human_rock; 
+    } else if (humanChoice == 'p') {
+        human = human_paper; 
+    } else {
+        human = human_scissors; 
+    }
+
+    if (computerChoice == 'r') {
+        computer = computer_rock; 
+    } else if (computerChoice == 'p') {
+        computerChoice = computer_paper;
+    } else {
+        computer = computer_scissors;
+    }
+
+    result = human->fight(computer);
+    return result;
+}

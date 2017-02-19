@@ -17,8 +17,12 @@
 class RPSGame
 {
 private:
-    Tool *human;
-    Tool *comp;
+    Tool *human_rock;
+    Tool *human_paper;
+    Tool *human_scissors;
+    Tool *computer_rock;
+    Tool *computer_paper;
+    Tool *computer_scissors;
     int human_wins;
     int computer_wins;
     int ties;
@@ -26,6 +30,8 @@ private:
     char comp_last_tool;
     int last_winner;
 public:
+    // Constructor
+    RPSGame (int hr, int hp, int hs, int cr, int cp, int cs);
     // Set human tool
     void set_human (Tool* human_object) {human = human_object;}
     // Set computer tool
