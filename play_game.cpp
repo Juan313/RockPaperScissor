@@ -16,8 +16,9 @@
 #include "menu.hpp"
 #include "input.hpp"
 #include "RPSGame.hpp"
-// #include "RPSGame.hpp"
 #include <iostream> 
+
+std::string getFullName(char c);
 
 int main()
 {
@@ -63,13 +64,12 @@ int main()
   humanChoice = Menu::getChoice();
   while (humanChoice != 'e') 
   {
-    // need to interface with RPSGame 
-    std::cout<<"Getting computer choice......"<<std::endl;
+    std::string toolName;
     computerChoice = game->computerChoice();
-    // need to interface with RPSGame 
-    // int result = 1;
+    toolName = getFullName(computerChoice);
+    std::cout<<"Computer chose "<<toolName<<std::endl;
     int result = game->play(humanChoice, computerChoice);
-    std::cout << "RESULT: " << result << std::endl;
+    //std::cout << "RESULT: " << result << std::endl;
     if (result == 1) 
     { 
       std::cout<<"Human wins!"<<std::endl; 
@@ -83,15 +83,27 @@ int main()
       std::cout<<"It's a tie!"<<std::endl; 
     }
     // display score so far. Need to interface with RPSGame
-    std::cout<<"Human wins: "<< 1 <<std::endl; 
-    std::cout<<"Computer wins: "<< 2 <<std::endl; 
-    std::cout<<"Ties: "<< 3 <<std::endl; 
+    game->print_stats();
     humanChoice = Menu::getChoice();
     
   }
   std::cout<<"Thanks for playing. Goodbye! "<<std::endl;
-  
-  
-
+  delete game;
   return 0;
 }
+std::string getFullName(char c)
+{
+  std::string name;
+  switch (c)
+  {
+    case 'r': name = "rock";
+              break;
+    case 'p': name = "paper";
+              break;
+    case 's': name =  "scissor";
+              break;
+  }
+  return name;
+
+}
+

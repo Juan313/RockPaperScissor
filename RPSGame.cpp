@@ -128,6 +128,15 @@ RPSGame::RPSGame (int hr, int hp, int hs, int cr, int cp, int cs) {
     human_wins = 0;
     ties = 0;
 }
+// Destructor
+RPSGame::~RPSGame() {
+  delete human_rock;
+  delete human_paper;
+  delete human_scissors;
+  delete computer_rock;
+  delete computer_paper;
+  delete computer_scissors;
+}
 
 // Takes two characters as arguments representing human tool and computer tool
 // Updates stats on RPSGame object and returns fight results 

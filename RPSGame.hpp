@@ -32,6 +32,8 @@ private:
 public:
     // Constructor
     RPSGame (int hr, int hp, int hs, int cr, int cp, int cs);
+    // Destructor
+    ~RPSGame ();
     // Set human wins
     void set_human_wins (int wins) {human_wins = wins;}
     // Get human wins
