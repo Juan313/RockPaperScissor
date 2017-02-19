@@ -124,13 +124,19 @@ RPSGame::RPSGame (int hr, int hp, int hs, int cr, int cp, int cs) {
     computer_rock = new Rock(cr);
     computer_paper = new Paper(cp);
     computer_scissors = new Scissors(cs);
+    computer_wins = 0;
+    human_wins = 0;
+    ties = 0;
 }
 
+// Takes two characters as arguments representing human tool and computer tool
+// Updates stats on RPSGame object and returns fight results 
 int RPSGame::play (char humanChoice, char computerChoice) {
     int result;
     Tool* human;
     Tool* computer;
-
+    
+    // Set human choice
     if (humanChoice == 'r') {
         human = human_rock; 
     } else if (humanChoice == 'p') {
@@ -139,14 +145,41 @@ int RPSGame::play (char humanChoice, char computerChoice) {
         human = human_scissors; 
     }
 
+    // Set computer choice
     if (computerChoice == 'r') {
         computer = computer_rock; 
     } else if (computerChoice == 'p') {
-        computerChoice = computer_paper;
+        computer = computer_paper;
     } else {
         computer = computer_scissors;
     }
-
+    
+    // Fight
     result = human->fight(computer);
+    // Set results
+    set_winner(result);
+    set_human_last_tool(humanChoice); 
+    set_comp_last_tool(computerChoice);
+
     return result;
+}
+
+// Sets winner based on int argument 
+void RPSGame::set_winner (int winner) {
+    if (winner == 1) {
+        set_human_wins(get_human_wins() + 1);
+        set_last_winner(1);
+    } else if (winner == 2) {
+        set_computer_wins(get_computer_wins() + 1);
+        set_last_winner(2);
+    } else {
+        set_ties(get_ties() + 1); 
+    }
+}
+
+// Prints basic stats from RPSGame
+void RPSGame::print_stats () {
+    std::cout << "Human wins: " << get_human_wins() << std::endl;
+    std::cout << "Computer wins: " << get_computer_wins() << std::endl; 
+    std::cout << "Ties: " << get_ties() << std::endl;
 }

@@ -15,6 +15,7 @@
  **************************************************************/
 #include "menu.hpp"
 #include "input.hpp"
+#include "RPSGame.hpp"
 // #include "RPSGame.hpp"
 #include <iostream> 
 
@@ -24,7 +25,7 @@ int main()
   char humanChoice; 
 // computer tool choice
   char computerChoice; 
-
+  RPSGame* game;
 /*******************************
    hr: human rock strength
    hp: human paper strength
@@ -37,12 +38,12 @@ int main()
 
   // 'n' if the strength for all the tools are 1; 'y' if use customized strength 
   char strengthChoice = Menu::customizeStrength();
-  
+
   if (strengthChoice =='y')
   {
     // initialized game with all customized strength 
     Menu::getStrength(hr,hp,hs,cr,cp,cs);
- //   GPSGame game(hr,hp,hs,cr,cp,cs);
+    game = new RPSGame(hr,hp,hs,cr,cp,cs);
     std::cout<<"initialized game with customized strength "<<std::endl;
     
     std::cout<<"human rock strength is "<<hr <<std::endl;
@@ -55,7 +56,7 @@ int main()
   else 
   {
     // initialized game with all tools strength equal to 1
-    // GPSGame game(1,1,1,1,1,1);
+    game = new RPSGame(1,1,1,1,1,1);
     std::cout<<"initialized game with all tools strength equal to 1"<<std::endl;
   }
 
@@ -64,10 +65,11 @@ int main()
   {
     // need to interface with RPSGame 
     std::cout<<"Getting computer choice......"<<std::endl;
-    // computerChoice = game.ComputerChoice();
+    computerChoice = game->computerChoice();
     // need to interface with RPSGame 
-    int result = 1;
-//    int result = game.play(humanceChoice,computerChoice);
+    // int result = 1;
+    int result = game->play(humanChoice, computerChoice);
+    std::cout << "RESULT: " << result << std::endl;
     if (result == 1) 
     { 
       std::cout<<"Human wins!"<<std::endl; 

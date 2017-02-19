@@ -32,10 +32,6 @@ private:
 public:
     // Constructor
     RPSGame (int hr, int hp, int hs, int cr, int cp, int cs);
-    // Set human tool
-    void set_human (Tool* human_object) {human = human_object;}
-    // Set computer tool
-    void set_comp (Tool* comp_object) {comp = comp_object;}
     // Set human wins
     void set_human_wins (int wins) {human_wins = wins;}
     // Get human wins
@@ -62,4 +58,10 @@ public:
     int get_last_winner () {return last_winner;}
     // AI chooses and returns next tool type
     char computerChoice ();
+    // Fight based on computer and human choice
+    int play (char humanChoice, char computerChoice);
+    // Set winner
+    void set_winner (int winner);
+    // Prints basic stats from RPSGame
+    void print_stats ();
 };
