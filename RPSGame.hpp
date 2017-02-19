@@ -55,5 +55,5 @@ public:
     // Get last winner
     int get_last_winner () {return last_winner;}
     // AI chooses and returns next tool type
-    void computerChoice ();
+    char computerChoice ();
 };
