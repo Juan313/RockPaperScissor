@@ -1,3 +1,18 @@
+/************************************************************
+ ** File Name: play_game.cpp
+ ** Author 1: Nathaniel Bennet
+ ** Author 2: Aaron Berns
+ ** Author 3: Juan Du
+ ** Author 4: Christopher Dubbs
+ ** Author 5: Chieko Duncans
+ ** Author 6: Molly Johnson
+ ** Author 7: Armand Reitz
+ ** Date: 02/17/2016
+ ** CS 162 Group Project | Play Rock Paper, Scissors!!!
+ ** File discription: Rock, Paper, and Scissor class implementation file
+ ** Reference 1: Textbook "C++ Early Objects 8th edition"
+ **              written by Tony Gaddis, Judy Walters, and Godfrey Mudganda
+ **************************************************************/
 #include "menu.hpp"
 #include "input.hpp"
 // #include "RPSGame.hpp"
