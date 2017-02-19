@@ -1,5 +1,5 @@
 /************************************************************
-** File Name: RPSGame.hpp
+** File Name: RPSGame.cpp
 ** Author 1: Nathaniel Bennet
 ** Author 2: Aaron Berns
 ** Author 3: Juan Du
