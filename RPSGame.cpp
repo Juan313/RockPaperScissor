@@ -34,6 +34,7 @@
 *********************************************************************************************************************/
 char RPSGame::computerChoice()
 {
+	char computerTool;
 	//need member variables to store last winner(1,2 or 3) and user's last choice(r,p or s), initialize to a value
 	//1 = human won last, 2 = computer won last, 3 = last round was draw
 	//note: this function should be called before the function that lets the human choose their current round
