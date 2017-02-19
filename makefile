@@ -19,3 +19,8 @@ ${OBJS}:${SRCS}
 	${CXX} ${CXXFLAGS} -c $(@:.o=.cpp)
 clean:
 	rm *o prog
+
+# added zip command if not necessary, please feel free to remove
+# updated: 17:24, 02/18
+zip:
+	zip $(PROJ).zip *.cpp *.hpp makefile
