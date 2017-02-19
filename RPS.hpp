@@ -16,8 +16,8 @@
  * ** Reference 3: 
  * **************************************************************/
 
-#ifndef RPS_hpp
-#define RPS_hpp
+#ifndef RPS_HPP // changed to capitalized
+#define RPS_HPP // changed to capitalized
 #include <iostream>
 #include "Tool.hpp"
 
