@@ -127,6 +127,9 @@ RPSGame::RPSGame (int hr, int hp, int hs, int cr, int cp, int cs) {
     computer_wins = 0;
     human_wins = 0;
     ties = 0;
+    last_winner = 0;    // lets AI know its first round
+    unsigned seed = time(0);    // seed srand
+    srand(seed);
 }
 // Destructor
 RPSGame::~RPSGame() {
@@ -182,7 +185,8 @@ void RPSGame::set_winner (int winner) {
         set_computer_wins(get_computer_wins() + 1);
         set_last_winner(2);
     } else {
-        set_ties(get_ties() + 1); 
+        set_ties(get_ties() + 1);
+        set_last_winner(3);         // sets tie
     }
 }
 
