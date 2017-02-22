@@ -12,17 +12,8 @@
 ** File discription: RPSGame class implementation file
 **************************************************************/
 #include "RPSGame.hpp"
-
-//in another function (like main), use srand/generator seed/time 
-//function outside of loop to seed once:
-//#include <ctime>
-//#include <cstdlib>
-//unsigned randomGeneratorSeed;
-//randomGeneratorSeed = time(0);
-//srand(randomGeneratorSeed);
-
-//also note: I used generic names for some of the variables. will have to change depending on what the member 
-//variables have actually been named by the other group members
+#include <cstdlib>
+#include <ctime>
 
 /**********************************************************************************************************************
 ** Description: This function accepts no arguments and returns nothing. This function will first check what the status
@@ -35,12 +26,7 @@
 char RPSGame::computerChoice()
 {
 	char computerTool;
-	//need member variables to store last winner(1,2 or 3) and user's last choice(r,p or s), initialize to a value
-	//1 = human won last, 2 = computer won last, 3 = last round was draw
-	//note: this function should be called before the function that lets the human choose their current round
-	//tool, so that the human tool used in this function is from the previous round and not the current round
-	//alternatively, there could be a "lastHumanTool" data member and a "currentHumanTool" data member 
-	//to keep the two separate.
+	
 	if (last_winner == 1) //human won last, computer lost last
 	{
 		//if last tool used by human == rock
@@ -92,8 +78,7 @@ char RPSGame::computerChoice()
 		}
 	}
 
-	//If this is the first play, or if the last round was a draw, computer tool should be random.
-	//Set lastWinner to 0 in constructor to indicate first play
+	
 	else //if first play (lastWinner == 0) or last round was a draw (lastWinner == 3)
 	{
 		//rand num formula in a range is: number = (rand() % (maxValue - minValue + 1)) + minValue
