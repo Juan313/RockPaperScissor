@@ -24,4 +24,4 @@ clean:
 # added *.pdf to zip design file together
 # updated: 02:01 am(PST), 02/25
 zip:
-	zip $(PROJ).zip *.cpp *.hpp makefile
+	zip $(PROJ).zip *.cpp *.hpp *.pdf makefile
