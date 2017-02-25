@@ -21,6 +21,7 @@ clean:
 	rm *o prog
 
 # added zip command if not necessary, please feel free to remove
-# updated: 17:24, 02/18
+# added *.pdf to zip design file together
+# updated: 02:01 am(PST), 02/25
 zip:
 	zip $(PROJ).zip *.cpp *.hpp makefile
