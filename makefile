@@ -1,3 +1,11 @@
+# CS162 W2017 Group Project - Group 5
+# Group5 makefile
+
+#
+# Project Name
+#
+PROJ = Group5
+
 CXX = g++
 CXXFLAGS = -std=c++11
 CXXFLAGS += -Wall
